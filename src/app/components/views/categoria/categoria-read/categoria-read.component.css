@@ -1,0 +1,54 @@
+.content{
+    width: 90%;
+    margin: 1.4rem auto auto auto;
+}
+.title{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.title h1{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.criar-categoria{
+    margin-bottom: .5rem;
+    background-color: blue;
+}
+
+.criar-categoria:hover{
+    background-color: rgba(0, 0, 255, 0.7);
+}
+.table{
+    background-color: rgba(61, 58, 58, 0.918);
+    width: 100%;
+}
+
+.mat-header{
+    width: 5rem;
+}
+
+.actions{
+    color:rgb(139, 139, 139);
+    margin-right: .5rem;
+    cursor: pointer;
+}
+.actions:hover{
+    color:rgba(255, 255, 255);
+}
+
+.livros{
+    color:rgb(139, 139, 139);
+    margin-left: .5rem;
+}
+
+.livros:hover{
+    color:rgba(255, 255, 255);
+}
+
+.dialogo{
+    border: solid 10 10 red;
+}
+
+

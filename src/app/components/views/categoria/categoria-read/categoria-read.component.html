@@ -1,0 +1,63 @@
+<div class="content">
+  <div class="title">
+    <h1>CATEGORIAS</h1>
+  </div>
+  <button matTooltip="Criar Categoria" matTooltipPosition="above" (click)="gotToCategoriaCreate()" mat-raised-button
+    color="primary" class="mat-elevation-z8 criar-categoria">
+    NOVA CATEGORIA
+  </button>
+  <div class="mat-elevation-z8 content-table">
+    <table class="table" mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef>NOME</th>
+        <td mat-cell *matCellDef="let row">{{ row.nome }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="descricao">
+        <th mat-header-cell *matHeaderCellDef>DESCRIÇÃO</th>
+        <td mat-cell *matCellDef="let row">{{ row.descricao }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="livros">
+        <th mat-header-cell *matHeaderCellDef>LIVROS</th>
+        <td mat-cell *matCellDef="let row">
+          <a routerLink="/livros/{{row.id}}">
+            <i matTooltip="Ver livros" matTooltipPosition="right" class="material-icons livros">books</i>
+          </a>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acoes">
+        <th class="mat-header" mat-header-cell *matHeaderCellDef>AÇÕES</th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon class="make-white">more_vert</mat-icon>
+          </button>
+          <div class="itens-menu-ver">
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item routerLink="update/{{row.id}}" class="menu-vertical-botao">
+                <mat-icon>edit</mat-icon>
+                <span>Editar</span>
+              </button>
+              <button mat-menu-item (click)="deleteCategoria(row.id)">
+                <mat-icon>delete</mat-icon>
+                <span>Remover</span>
+              </button>
+            </mat-menu>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true"
+      [length]="totalSize" [pageIndex]="currentPage" (page)="handlePage($event)">
+    </mat-paginator>
+  </div>
+</div>

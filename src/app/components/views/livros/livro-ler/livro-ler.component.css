@@ -1,0 +1,28 @@
+.texto{
+    background-color: white;
+    color: black;
+    margin-top: 3rem;
+    min-height: 100%;
+    text-align: center;
+    border: solid black;
+}
+h1{
+    padding-top: 3rem;
+}
+p{
+    text-align: justify;
+    margin: 4rem;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    padding-bottom: 3rem;
+}
+
+.livros-toolbar {
+    background-color: greenyellow;
+    border: none;
+}
+
+.espacador-toolbar {
+    flex: 1 1 auto;
+}
+

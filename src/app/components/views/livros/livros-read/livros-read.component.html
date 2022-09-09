@@ -1,0 +1,52 @@
+<mat-toolbar class="livros-toolbar">
+    <button mat-icon-button matTooltip="Opções" matTooltipPosition="right" [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>Exibindo livros</span>
+    <span class="espacador-toolbar"></span>
+    <div *ngIf="pesquisar" class="form-group">
+        <input type="text" class="barra-pesquisa" id="search-text" aria-describedby="pesquisar-texto" 
+          [(ngModel)]="searchText" placeholder="Digite sua pesquisa" 
+          autofocus>
+      </div>
+    <button mat-icon-button matTooltip="Pesquisar" matTooltipPosition="below" (click)="togglePesquisa()">
+        <mat-icon>search</mat-icon>
+    </button>
+
+    <button mat-icon-button matTooltip="Voltar" matTooltipPosition="below" routerLink="/categorias">
+        <mat-icon>navigate_before</mat-icon>
+    </button>
+</mat-toolbar>
+<div class="itens-menu-ver">
+    <mat-menu #menu="matMenu" class="matmenu">
+        <button mat-menu-item routerLink="add">
+            <mat-icon>add</mat-icon>
+            <span>Adicionar</span>
+        </button>
+    </mat-menu>
+</div>
+
+
+
+
+<div class="container" *ngIf="livros.length > 0">
+    <ul>
+        <li *ngFor="let book of livros | appFilter: searchText">
+            <div class="bloco">
+                <div class='principe' style="background-image: url('{{getImg(book)}}');" class="photo"></div>
+                <div class="desc">
+                    <h1>{{book.titulo}}</h1>
+                    <i matTooltip="Autor: {{book.autor}}" class="material-icons icons">people</i>
+                    <i matTooltip="Editar Livro" class="material-icons icons" routerLink="update/{{book.id}}">edit</i>
+                    <i matTooltip="Ler" class="material-icons icons" routerLink="{{book.id}}/ler">chrome_reader_mode</i>
+                    <i matTooltip="Remover Livro" class="material-icons icons delete"
+                        (click)="delete(book.id)">delete</i>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="sem-livros" *ngIf="isCarregadoAndVazio()">
+    <h1>Essa categoria ainda não possui livros</h1>
+</div>

@@ -1,0 +1,12 @@
+<mat-toolbar class="livros-toolbar">
+    <span>Lendo livro</span>
+    <span class="espacador-toolbar"></span>
+    <button mat-icon-button matTooltip="Voltar" matTooltipPosition="below" (click)="voltar()">
+        <mat-icon>navigate_before</mat-icon>
+    </button>
+</mat-toolbar>
+<div class="texto">
+    <h1>{{livro.titulo}}</h1>
+    <h3>{{livro.autor}}</h3>
+    <p>{{livro.texto}}</p>
+</div>

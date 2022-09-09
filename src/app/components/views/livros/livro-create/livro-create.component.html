@@ -1,0 +1,34 @@
+<form>
+    <h1>CRIANDO NOVO LIVRO</h1>
+    <mat-form-field class="form">
+        <mat-label>Título</mat-label>
+        <input matInput [(ngModel)]="livro.titulo" type="text" name="titulo" autocomplete="off"
+            placeholder="Ex. Pequeno principe" required />
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Autor</mat-label>
+        <input matInput [(ngModel)]="livro.autor" type="text" name="autor" autocomplete="off"
+            placeholder="Ex. Machado de Assis" required />
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Imagem Capa</mat-label>
+        <input matInput [(ngModel)]="livro.urlCapa" type="text" name="nome" autocomplete="off"
+            placeholder="Ex. http://exemplo.com.br/img.png" required />
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Texto</mat-label>
+        <textarea matInput [(ngModel)]="livro.texto" type="text" name="texto" class="texto"
+            placeholder="Ex. Lorem Ipsum" required></textarea>
+    </mat-form-field>
+
+    <div class="buttons">
+        <button type="submit" matTooltip="Criar Livro" matTooltipPosition="below" mat-raised-button color="primary"
+            class="mat-elevation-z8 criar-livro" (click)="create()">
+            CRIAR
+        </button>
+        <button matTooltip="Voltar" matTooltipPosition="below" mat-raised-button color="warn"
+            class="mat-elevation-z8 cancelar" (click)="voltar()">
+            CANCELAR
+        </button>
+    </div>
+</form>

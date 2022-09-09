@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.custom mat-dialog-container{
+    border-radius: 2rem;
+}
+
+
+
+.ERRO {
+    background-color: red;
+    color: white;
+    font-weight: 300;
+}
+
+.OK {
+    background-color: green;
+    color: white;
+    font-weight: 300;
+}
+
+.AVISO {
+    background-color: goldenrod;
+    color: white;
+    font-weight: 300;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

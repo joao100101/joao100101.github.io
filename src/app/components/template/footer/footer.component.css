@@ -1,0 +1,12 @@
+mat-toolbar{
+    background-color: rgb(32, 30, 30);
+    color:white;
+}
+
+.footer{
+    height: 5%;
+    position: fixed;
+    bottom: 0;
+    justify-content: flex-end;
+    font-size: 1rem;
+}
